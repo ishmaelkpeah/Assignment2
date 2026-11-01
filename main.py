@@ -17,27 +17,29 @@ CS1430_MEETINGS_PER_SEMESTER = 45
 
 def cost_per_semester(annual_cost):
     """Give back what one semester costs."""
-    return 0
+    return annual_cost / SEMESTERS_PER_YEAR
 
 
 def cost_per_month(annual_cost):
     """Give back what one month of the academic year costs."""
-    return 0
+    return annual_cost / MONTHS_PER_YEAR
 
 
 def cost_per_day(annual_cost):
     """Give back what one class day costs."""
-    return 0
+    semester_cost = annual_cost / SEMESTERS_PER_YEAR
+    return semester_cost / CLASS_DAYS_PER_SEMESTER
+
 
 
 def cost_per_credit(annual_cost, credits):
     """Give back what one credit costs. credits is the number taken this semester."""
-    return 0
+    return annual_cost / (SEMESTERS_PER_YEAR * credits)
 
 
 def cost_per_class(annual_cost, credits):
     """Give back what one 50-minute CS 1430 class meeting costs."""
-    return 0
+    return annual_cost / (SEMESTERS_PER_YEAR *credits * CS1430_MEETINGS_PER_SEMESTER)
 
 
 # ---- PROGRAM ----
