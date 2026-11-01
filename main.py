@@ -39,7 +39,7 @@ def cost_per_credit(annual_cost, credits):
 
 def cost_per_class(annual_cost, credits):
     """Give back what one 50-minute CS 1430 class meeting costs."""
-    return annual_cost / (SEMESTERS_PER_YEAR *credits * CS1430_MEETINGS_PER_SEMESTER)
+    return annual_cost / (SEMESTERS_PER_YEAR * CS1430_MEETINGS_PER_SEMESTER * credits / CS1430_CREDITS)
 
 
 # ---- PROGRAM ----
