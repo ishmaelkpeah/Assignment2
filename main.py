@@ -54,23 +54,23 @@ def main():
     
    
 
-        choice = input("Choose an option: ")
+        choice = input("Choose an option: ").strip().upper()
 
         if choice == "Q":
             break
 
         # Add a branch for each menu option here.
         if choice == "1":
-            print(cost_per_semester(annual_cost))
+            print(f"{cost_per_semester(annual_cost):.2f}")
         elif choice =="2":
-            print(cost_per_month(annual_cost))
+            print(f"{cost_per_month(annual_cost):.2f}")
         elif choice == "3":
         
-            print(cost_per_credit(annual_cost,credits))
+            print(f"{cost_per_credit(annual_cost, credits):.2f}")
         elif choice =="4":
-            print(cost_per_day(annual_cost))
+            print(f"{cost_per_day(annual_cost):.2f}")
         elif choice == "5":
-            print(cost_per_class(annual_cost, credits))
+            print(f"{cost_per_class(annual_cost, credits):.2f}")
             
 # ---- LAUNCH: do not change ----
 if __name__ == "__main__":
