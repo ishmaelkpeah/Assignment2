@@ -40,6 +40,8 @@ def cost_per_credit(annual_cost, credits):
 def cost_per_class(annual_cost, credits):
     """Give back what one 50-minute CS 1430 class meeting costs."""
     return annual_cost / (SEMESTERS_PER_YEAR * CS1430_MEETINGS_PER_SEMESTER * credits / CS1430_CREDITS)
+def cost_of_skipped_classes(annual_cost, credits, skipped):
+    return skipped * cost_per_class(annual_cost, credits)
 
 
 # ---- PROGRAM ----
@@ -71,6 +73,10 @@ def main():
             print(f"{cost_per_day(annual_cost):.2f}")
         elif choice == "5":
             print(f"{cost_per_class(annual_cost, credits):.2f}")
+        elif choice == "6":
+            skipped = int(input("How many classes did you skip? "))
+            total_skipped = cost_of_skipped_classes(annual_cost, credits, skipped)
+            print(f"Cost of skipped classes: ${total_skipped:.2f}")
             
 # ---- LAUNCH: do not change ----
 if __name__ == "__main__":
