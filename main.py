@@ -48,8 +48,11 @@ def main():
     # Ask for the total cost for one year here.
     # Then ask for the credits this semester.
 
-    while True:
-        # Show your menu here.
+   annual_cost = float(input("Enter annual cost: ")) 
+   credits = int(input("Enter credits this semester:"))
+   while True:
+    
+   
 
         choice = input("Choose an option: ")
 
@@ -57,8 +60,18 @@ def main():
             break
 
         # Add a branch for each menu option here.
-
-
+        if choice == "1":
+            print(cost_per_semester(annual_cost))
+        elif choice =="2":
+            print(cost_per_month(annual_cost))
+        elif choice == "3":
+        
+            print(cost_per_credit(annual_cost,credits))
+        elif choice =="4":
+            print(cost_per_day(annual_cost))
+        elif choice == "5":
+            print(cost_per_class(annual_cost, credits))
+            
 # ---- LAUNCH: do not change ----
 if __name__ == "__main__":
     main()
